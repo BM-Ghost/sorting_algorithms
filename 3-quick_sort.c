@@ -79,3 +79,4 @@ void helper_quick_sort(int *array, int low, int high, size_t size)
         helper_quick_sort(array, pivot + 1, high, size);
     }
 }
+
