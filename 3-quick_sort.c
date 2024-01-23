@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * value_swap - Swaps the pivot and elements
  * @pivot: Pointer to the pivot value
@@ -17,6 +18,7 @@ void value_swap(int *pivot, int *elem)
  * @array: The array to be sorted
  * @size: Number of elements in the array
  */
+
 void quick_sort(int *array, size_t size)
 {
     if (array == NULL || size < 2)
@@ -33,6 +35,7 @@ void quick_sort(int *array, size_t size)
  * @size: Number of elements in the array
  * Return: Index of the pivot after partitioning
  */
+
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
     int i = low - 1, j = low;
@@ -67,6 +70,7 @@ int lomuto_partition(int *array, int low, int high, size_t size)
  * @high: Higher index of the partition
  * @size: Number of elements in the array
  */
+
 void helper_quick_sort(int *array, int low, int high, size_t size)
 {
     int pivot;
