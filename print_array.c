@@ -4,6 +4,7 @@
  * print_array - Prints an array of integers
  * @array: The array to be printed
  * @size: The size of the array
+ * * Return: Array
  */
 void print_array(const int *array, size_t size)
 {
