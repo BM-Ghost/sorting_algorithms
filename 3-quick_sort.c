@@ -7,23 +7,22 @@
  */
 void value_swap(int *pivot, int *elem)
 {
-    int tmp = *elem;
-    *elem = *pivot;
-    *pivot = tmp;
+	int tmp = *elem;
+	*elem = *pivot;
+	*pivot = tmp;
 }
 
 /**
  * quick_sort - Sorts an array of integers in ascending order using Quick sort algorithm
- * Lomuto partition method
  * @array: The array to be sorted
  * @size: Number of elements in the array
  */
 void quick_sort(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    helper_quick_sort(array, 0, size - 1, size);
+	helper_quick_sort(array, 0, size - 1, size);
 }
 
 /**
@@ -36,29 +35,29 @@ void quick_sort(int *array, size_t size)
  */
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
-    int i = low - 1, j = low;
-    int pivot = array[high];
+	int i = low - 1, j = low;
+	int pivot = array[high];
 
-    for (; j < high; j++)
-    {
-        if (array[j] < pivot)
-        {
-            i++;
-            if (array[i] != array[j])
-            {
-                value_swap(&array[i], &array[j]);
-                print_array(array, size);
-            }
-        }
-    }
+	for (; j < high; j++)
+	{
+		if (array[j] < pivot)
+		{
+			i++;
+			if (array[i] != array[j])
+			{
+				value_swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
+		}
+	}
 
-    if (array[i + 1] != array[high])
-    {
-        value_swap(&array[i + 1], &array[high]);
-        print_array(array, size);
-    }
+	if (array[i + 1] != array[high])
+	{
+		value_swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
 
-    return (i + 1);
+	return (i + 1);
 }
 
 /**
@@ -70,12 +69,12 @@ int lomuto_partition(int *array, int low, int high, size_t size)
  */
 void helper_quick_sort(int *array, int low, int high, size_t size)
 {
-    int pivot;
+	int pivot;
 
-    if (low < high)
-    {
-        pivot = lomuto_partition(array, low, high, size);
-        helper_quick_sort(array, low, pivot - 1, size);
-        helper_quick_sort(array, pivot + 1, high, size);
-    }
+	if (low < high)
+	{
+		pivot = lomuto_partition(array, low, high, size);
+		helper_quick_sort(array, low, pivot - 1, size);
+		helper_quick_sort(array, pivot + 1, high, size);
+	}
 }
