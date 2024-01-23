@@ -13,7 +13,8 @@ void value_swap(int *pivot, int *elem)
 }
 
 /**
- * quick_sort - Sorts an array of integers in ascending order using Quick sort algorithm
+ * quick_sort - Sorts an array of integers in ascending order
+ * Lomuto partition method
  * @array: The array to be sorted
  * @size: Number of elements in the array
  */
